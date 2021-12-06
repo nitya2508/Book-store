@@ -1,0 +1,65 @@
+<div  fxLayout="column" fxLayoutAlign="space-around center" >
+    <form [formGroup]="SignupForm" >
+
+    <div FxLayout="column" class="inputfield"> 
+        <div>
+            <span class="title">Full Name</span>
+        </div>
+        <div>
+            <mat-form-field class="firstname"  >
+                <!-- <mat-label>First name</mat-label> -->
+                <input class="input" matInput formControlName="firstName" >
+                <mat-error class="error">Enter Name</mat-error>
+                </mat-form-field>
+        </div>
+        
+    </div>
+
+    <div FxLayout="column"  class="inputfield"> 
+        <div>
+            <span class="title">Email Id</span>
+        </div>
+        <div>
+            <mat-form-field class="firstname">
+                <!-- <mat-label>First name</mat-label> -->
+                <input class="input" matInput formControlName="email">
+                <mat-error class="error">Enter email id</mat-error>
+                </mat-form-field>
+        </div>
+        
+    </div>
+
+    <div FxLayout="column"  class="inputfield"> 
+        <div>
+            <span class="title">Password</span>
+        </div>
+        <div>
+            <mat-form-field  class="firstname">
+                <!-- <mat-label>First name</mat-label> -->
+                <input class="input" matInput formControlName="password">
+                <mat-error class="error">Enter password</mat-error>
+                </mat-form-field>
+        </div>
+        
+    </div>
+
+    <div FxLayout="column"  class="inputfield">
+        <div>
+            <span class="title">Mobile Number</span>
+        </div>
+        <div>
+            <mat-form-field class="firstname" >
+                <!-- <mat-label>First name</mat-label> -->
+                <input class="input" matInput  formControlName="mobile">
+                <mat-error class="error">Enter mobile number</mat-error>
+                </mat-form-field>
+        </div>
+        
+    </div>
+
+    <div  class="buttonfield">
+       <button (click)="onSubmit()">Signup</button>
+        
+    </div>
+    </form>
+</div>

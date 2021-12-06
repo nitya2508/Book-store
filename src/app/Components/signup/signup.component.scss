@@ -1,0 +1,31 @@
+.firstname{
+    // border: 2px solid green;
+    border: 1px solid #D0D0D0;
+    width: 250px;
+    height: 30px;
+}
+.title{
+    
+    font-size: 11px;
+}
+.input{
+    height: 30px;
+}
+.inputfield{
+    margin-top: 10px;
+}
+.buttonfield{
+    margin-top: 25px;
+}
+button{
+    background-color: rgb(158, 17, 17);
+    border: none;
+    color: white;
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+}
+.error{
+    font-size: 10px;
+    color: red;
+}

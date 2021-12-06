@@ -1,0 +1,42 @@
+.main{
+    // border: 2px solid orangered;
+    width: 98vw;
+    height: 98vh;
+}
+
+.shaded{
+    // border: 2px solid green;
+    width: 80%;
+    height: 80%;
+}
+.imagediv{
+    display: flex;
+    position: relative;
+    border-radius: 30px;
+    width: 25%;
+    height: 50%;
+    background-color: white;
+}
+.image{
+    border-radius: 150px;
+    width: 230px;
+    height: 230px;
+}
+.regForm{
+    background-color: white;
+    width: 25%;
+    height: 55%;
+    position: relative;
+    right: 25px;
+    border-radius: 8px;
+}
+.buttonStyle{
+    // border: 1px solid red;
+    height: 70px;
+}
+button{
+    background-color: white;
+    font-size: 25px;
+    color: gray;
+    border: none;
+}

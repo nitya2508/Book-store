@@ -1,0 +1,20 @@
+
+<div class="main" fxLayout="row" fxLayoutAlign="center center" >
+    <div class="shaded" [ngStyle]="isSignup?{'background-color':'#C8C8C8'} : {'background-color': '#909090'}" 
+    fxLayout="row" fxLayoutAlign="center center" >
+        
+        <div class="imagediv" fxLayout="column" fxLayoutAlign="center center"> 
+            <img class="image" src="../../../assets/2766594.png">
+            <h4>ONLINE BOOK SHOPPING</h4>
+        </div>
+        <div class="regForm">
+            <div class="buttonStyle" fxLayout="row" fxLayoutAlign="space-evenly center">
+            <button [style.color]="!isSignup ? 'black' : 'gray'" (click)="login()">LOGIN</button>
+            <button [style.color]="isSignup ? 'black' : 'gray'"  (click)="signup()">SIGNUP</button>
+            </div>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

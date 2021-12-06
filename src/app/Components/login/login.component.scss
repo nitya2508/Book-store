@@ -1,0 +1,55 @@
+.firstname{
+    // border: 2px solid green;
+    border: 1px solid #D0D0D0;
+    width: 250px;
+    height: 30px;
+}
+.title{
+    
+    font-size: 11px;
+}
+.input{
+    height: 30px;
+}
+.inputfield{
+    margin-top: 10px;
+}
+.buttonfield{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.button1{
+    background-color: rgb(158, 17, 17);
+    border: none;
+    color: white;
+    width: 250px;
+    height: 40px;
+    border-radius: 3px;
+}
+.error{
+    font-size: 10px;
+    color: red;
+}
+hr{
+    width: 30%;
+}
+.facebook{
+    background-color: rgb(29, 29, 194);
+    color: white;
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 3px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.google{
+    background-color: rgb(228, 220, 220);
+    color: black;
+    border: 1px solid rgb(228, 214, 214);
+    width: 100px;
+    height: 35px;
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
