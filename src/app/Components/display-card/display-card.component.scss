@@ -1,0 +1,64 @@
+.screen{
+    // border: 2px solid orangered;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+.header{
+    width: 100%;
+}
+.displaycard{
+    width: 250px;
+    height: 300px;
+    border: 1px solid rgb(221, 216, 216);
+    background-color: #F8F8F8;
+    margin: 20px;
+}
+.displaycard:hover{
+    // border: 2px solid rgb(47, 47, 228);
+    box-shadow: 1px 1px 1px 1px #d1cdcd;
+    cursor: pointer;
+}
+.items{
+    opacity: 0.5;
+    margin-top: 28px;
+    margin-left: 5px;
+}
+.dropdown{
+    border: 1px solid black;
+    color: black;
+    font-size: 15px;
+}
+.imagediv{
+    // border: 2px solid palegreen;
+    background-color: #F0F0F0;
+    width: 100%;
+    height: 65%;
+}
+.bookdetails{
+    // border: 1px solid orangered;
+    margin-left: 10px;
+    line-height: 15px;}
+.bookname{
+
+    font-size: 14px;
+}
+.author{
+    font-size: 11px;
+    opacity: 0.5;
+}
+.rating{
+    background-color: green;
+    font-size: 12px;
+    width: 25px;
+    color: white;
+}
+.number{
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 12px;
+}
+.price{
+    font-size: 12px;
+}

@@ -1,0 +1,37 @@
+<div  >
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="header">
+       <div fxLayout="row">
+        <h2>Books  </h2>
+        <small class="items">( {{BookArray.length}} items )</small>
+       </div>
+
+       <div>
+        <mat-form-field appearance="fill" class="dropdown">
+            <mat-label>Sort by relevence</mat-label>
+            <mat-select> 
+              <!-- <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option> -->
+            </mat-select>
+          </mat-form-field>
+       </div>
+    </div>
+    <div  fxLayout="row" class="screen" >
+        <div *ngFor="let book of BookArray">
+       
+            <div class="displaycard" fxLayout="column" (click)="bookDetails(book)">
+                <div class="imagediv" fxLayout="row" fxLayoutAlign="center center" >
+                    <img src="../../../assets/Image 11.png">
+                </div>
+                <div class="bookdetails">
+                    <p class="bookname">{{book.bookName}}</p>
+                    <span class="author">by {{book.author}}</span>
+                    <div fxLayout="row">
+                        <p class="rating">4.5</p>
+                        <span class="number">({{book.quantity}})</span>
+                    </div>
+                    <span class="price">Rs. {{book.price}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

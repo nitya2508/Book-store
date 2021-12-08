@@ -1,0 +1,60 @@
+.toolbar{
+    // border: 2px solid green;
+    height: 60px;
+    background-color: brown;
+}
+.title{
+    color: white;
+    margin-left: 5px;
+    font-size: 23px;
+    // margin-bottom: 10px;
+}
+.logo{
+    // border: 2px solid yellow;
+    margin-top: 15px;
+    margin-left: 150px;
+}
+.screen{
+    // border: 2px solid red;
+    height: 97vh;
+}
+.formfield{
+    // min-width: 200px;
+    width: 600px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 150px;
+    background-color: white;
+    border-radius: 3px;
+    // border: 5px solid orchid;
+}
+.searchbutton{
+    background-color: white;
+    border: none;
+    opacity: 0.5;
+}
+.input{
+    // border:2px solid green;
+    width: 500px;
+    margin-left: 30px;
+    height: 25px;
+}
+.profilebutton{
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    border:none;
+}
+.profile{
+    color: white;
+    font-size: 10px;
+}
+.prof{
+    margin-top: 10px;
+    margin-left: 250px;
+}
+.cart{
+    margin-top: 10px;
+    margin-left: 150px;
+}
