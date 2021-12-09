@@ -23,6 +23,7 @@ import { ForgetPasswordComponent } from './Components/forget-password/forget-pas
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { DisplayCardComponent } from './Components/display-card/display-card.component';
+import { BookDisplayComponent } from './Components/book-display/book-display.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DisplayCardComponent } from './Components/display-card/display-card.com
     ForgetPasswordComponent,
     DashboardComponent,
     GetAllBooksComponent,
-    DisplayCardComponent
+    DisplayCardComponent,
+    BookDisplayComponent
   ],
   imports: [
     BrowserModule,

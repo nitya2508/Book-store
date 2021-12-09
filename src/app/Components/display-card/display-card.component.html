@@ -18,18 +18,31 @@
     <div  fxLayout="row" class="screen" >
         <div *ngFor="let book of BookArray">
        
-            <div class="displaycard" fxLayout="column" (click)="bookDetails(book)">
-                <div class="imagediv" fxLayout="row" fxLayoutAlign="center center" >
+            <div class="displaycard" fxLayout="column" >
+                <div class="imagediv" fxLayout="row" fxLayoutAlign="center center" (click)="bookDetails(book)">
                     <img src="../../../assets/Image 11.png">
                 </div>
-                <div class="bookdetails">
-                    <p class="bookname">{{book.bookName}}</p>
-                    <span class="author">by {{book.author}}</span>
-                    <div fxLayout="row">
-                        <p class="rating">4.5</p>
-                        <span class="number">({{book.quantity}})</span>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+
+                    <div class="bookdetails" (click)="bookDetails(book)">
+                        <p class="bookname">{{book.bookName}}</p>
+                        <span class="author">by {{book.author}}</span>
+                        <div fxLayout="row">
+                            <p class="rating">4.5 &starf;</p>
+                            <span class="number">({{book.quantity}})</span>
+                        </div>
+                        <div fxLayout="row">
+                        <span class="price">Rs. {{book.price}}</span>
+                        <span class="mrp">Rs. {{book.price + book.discountPrice}}</span>
+                        </div>
                     </div>
-                    <span class="price">Rs. {{book.price}}</span>
+
+                    <div fxLayout="column" fxLayoutAlign="space-around center" class="buttons">
+                        <button class="profilebutton" (click)="addtocart(book)"><img src="../../../assets/shopping_cart_black_24dp.svg"></button>
+                        <button class="profilebutton"><img src="../../../assets/favorite_black_24dp.svg"></button>
+                    </div>
+
                 </div>
             </div>
         </div>

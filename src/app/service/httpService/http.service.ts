@@ -9,20 +9,21 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postService(url:any, data:any, token:boolean=false, httpOptions:any){
-    console.log("inside http", data);
+  postService(url:any, data:any=null, token:boolean=false, httpOptions:any){
+    console.log("inside http", token);
     
-  return  this.httpClient.post(url,data , token && httpOptions );
+  return  this.httpClient.post(url, data , token && httpOptions );
   }
 
   getService(url:any, token:boolean=false, httpOptions:any){
 
-    return this,this.httpClient.get(url,token && httpOptions)
+    return this.httpClient.get(url,token && httpOptions)
 
   }
 
-  updateService(){
+  putService(url:any, data:any=null, token:boolean=false, httpOptions:any){
 
+    return  this.httpClient.put(url, data , token && httpOptions );
   }
 
   deleteService(){

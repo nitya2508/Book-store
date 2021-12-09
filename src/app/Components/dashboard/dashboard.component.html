@@ -1,20 +1,20 @@
 <div class="screen">
     <mat-toolbar class="toolbar">
         <mat-toolbar-row>
-         <div class="logo">
+         <div class="logo" fxHide.lt-xl>
             <img src="../../../assets/education.png">
             <span class="title">Bookstore</span>
          </div>
 
-         <mat-form-field class="formfield">
+         <mat-form-field class="formfield" fxHide.lt-sm>
             <mat-icon matPrefix>
             <button class="searchbutton"><img  src="../../../assets/search_black_24dp.svg"></button>
             </mat-icon>
             <input class="input" matInput   >
         </mat-form-field>
 
-        <div fxLayout="column" class="prof">
-        <button class="profilebutton"><img src="../../../assets/person_black_24dp.svg"></button>
+        <div fxLayout="column" class="prof" >
+        <button class="profilebutton" (click)="logout()"><img src="../../../assets/person_black_24dp.svg"></button>
         <span class="profile">Profile</span>
         </div>
 

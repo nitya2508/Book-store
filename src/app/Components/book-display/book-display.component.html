@@ -1,1 +1,85 @@
-<p>book-display works!</p>
+<div class="screen">
+
+    <div fxLayout="row">
+        <h3 class="home" routerLink="/home/bookList"> Home / </h3>
+        <h3> Book (01)</h3>
+    </div>
+
+    <div class="bookdesc" fxLayout="row"  fxLayout.lt-md="column"> 
+        <div class="image" fxLayout="row"  >
+            <div class="smallimg" >
+                <img class="smallimage"  src="../../../assets/Image 11.png">
+                <img class="smallimage" fxHide.lt-md src="../../../assets/Image 11.png">
+            </div>
+            <div class="largeimg" fxHide.lt-md>
+                <img class="largeimage" src="../../../assets/Image 11.png">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <button class="button1" *ngIf="AddtoBag" (click)="addToCart()">ADD TO BAG</button>
+                   
+                    <div *ngIf="countHide" fxLayout="row" fxLayoutAlign="center center" class="counter">
+                        <button (click)="countdecrease()" class="plusminus">
+                           <img src="../../../assets/remove_circle_outline_black_24dp.svg">
+                        </button>
+                        <p class="count">{{orderCount}}</p>
+                        <button  (click)="countincrease()" class="plusminus">
+                            <img src="../../../assets/control_point_black_24dp.svg">
+                        </button>
+                    </div>
+
+                    <button class="button2">WISHLIST</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <div class="bookdetails" fxLayout="column">
+                <p class="bookname">{{book.bookName}}</p>
+                <span class="author">by {{book.author}}</span>
+                <div fxLayout="row">
+                    <p class="rate">4.5 &starf;</p>
+                    <span class="number">({{book.quantity}})</span>
+                </div>
+                <div fxLayout="row">
+                <p class="price">Rs. {{book.price}}</p>
+                <span class="mrp">Rs. {{book.price + book.discountPrice}}</span>
+                </div>
+            </div>
+            <hr>
+            <div class="bookdetails">
+                <p> * Book Detail</p>
+                <p class="desc">{{book.description}}</p>
+            </div>
+            <hr>
+            <p class="feedback">Customer Feedback</p>
+            <div class="feedbackDiv" fxLayout="column">
+                <span class="overallRating">Overall rating</span> 
+                <div>
+                    <div class="rating">
+                        <input type="radio"  value="5" [checked]="star===5" />
+                         <label  (click)='onClick(5)'>5 stars</label>
+                          
+                        <input type="radio"  value="4" [checked]="star===4" />
+                        <label  (click)='onClick(4)'>4 stars</label>
+                          
+                        <input type="radio"  value="3" [checked]="star===3" />
+                        <label  (click)='onClick(3)'>3 stars</label>
+                          
+                        <input type="radio"  value="2" [checked]="star===2" />
+                        <label  (click)='onClick(2)'>2 stars</label>
+                          
+                        <input type="radio"  value="1" [checked]="star===1" />
+                        <label (click)='onClick(1)'>1 star</label>
+                    </div>
+                </div>
+                <div>
+                <textarea class="inputarea"></textarea>
+                </div>
+                <div>
+                <button class="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,217 @@
+.screen{
+    // border: 10px solid green;
+    width: 80%;
+    height: auto;
+    margin-left: 180px;
+}
+.home{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.bookdesc{
+    // border:2px solid orangered;
+    width: 100%;
+    height: auto;
+}
+.image{
+    // border:2px solid palevioletred;
+    width:35%;
+}
+.smallimg{
+    // border:2px solid greenyellow;
+    width: 15%;
+
+}
+.smallimage{
+    border:1px solid rgb(223, 211, 211);
+    width: 60px;
+    padding: 5px;
+}
+.largeimg{
+    // border:5px solid greenyellow;
+    width: 85%;
+    height: auto;
+}
+.largeimage{
+    border:1px solid gray;
+    padding: 20px;
+    width: 390px;
+    height: 460px;
+}
+.description{
+    //  border:10px solid gold;
+    width: 60%;
+    height: auto;
+}
+.bookdetails{
+    // border: 1px solid orangered;
+    margin-left: 25px;
+    // margin-top: 20px;
+    line-height: 15px;
+    width: 80%;
+}
+.bookname{
+
+    font-size: 25px;
+}
+.author{
+    font-size: 18px;
+    opacity: 0.5;
+}
+.rate{
+    background-color: green;
+    font-size: 18px;
+    width: 50px;
+    height: 20px;
+    color: white;
+    text-align: center;
+}
+.number{
+    font-size: 18px;
+    opacity: 0.5;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.price{
+    font-size: 30px;
+}
+.mrp{
+    margin-left: 20px;
+    margin-top: 28px;
+    font-size: 18px;
+    opacity: 0.6;
+    text-decoration-line: line-through;
+}
+hr{
+    // height: 1px;
+    color: rgb(187, 172, 172);
+    width: 70%;
+    opacity: 0.5;
+}
+.desc{
+    margin-left: 20px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+.button1{
+    background-color: rgb(158, 17, 17);
+    border: none;
+    color: white;
+    width: 200px;
+    height: 40px;
+    // border-radius: 3px;
+}
+.button2{
+    background-color: black;
+    border: none;
+    color: white;
+    width: 200px;
+    height: 40px;
+    // border-radius: 3px;
+}
+.feedback{
+    font-size: 20px;
+    margin-left: 30px;
+}
+.feedbackDiv{
+    // border: 2px solid pink;
+    background-color: rgb(226, 223, 223);
+    width: 80%;
+    height: 40%;
+    margin-left: 30px;
+}
+.overallRating{
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+
+
+.rating {
+    float:left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0.1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:0.8;
+    color:rgb(190, 29, 29);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+}
+
+
+.inputarea{
+    // border: 2px solid blue;
+    width: 80%;
+    height: 70px;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+.submit{
+    width: 80px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    margin-left: 75%;
+    margin-top: 10px;
+}
+
+.count {
+    // background   : #FFFFFF 0% 0% no-repeat padding-box;
+    border       : 1px solid #DBDBDB;
+    border-radius: 2px;
+    font-size    : 30px;
+    width: 50px;
+    height: 35px;
+    margin-top: 25px;
+    text-align: center;
+    // padding      : 10px 35px;
+ }
+ .plusminus {
+    width     : 38px !important;
+    height    : 38px !important;
+    background: #FAFAFA 0% 0% no-repeat padding-box !important;
+    opacity   : 1 !important;
+ }
+.counter{
+    // border:2px solid green;
+    // background-color: rgb(158, 17, 17);
+    // border: none;
+    // color: white;
+    width: 200px;
+    height: 40px;
+   
+}
