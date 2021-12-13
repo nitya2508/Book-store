@@ -1,0 +1,153 @@
+.screen{
+    // border: 2px solid yellowgreen;
+    width:60%;
+    margin-left: 15%; 
+}
+.home{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.cartItem{
+    border:1px solid rgb(194, 191, 191);
+    margin-top: 20px;
+    width: 800px;
+    height: auto;
+}
+.mycart{
+    margin-left: 40px;
+}
+.image{
+    width: 100px;
+    height: 120px;
+    margin-left: 40px;
+    margin-top: 25px;
+    
+}
+.bookdetails{
+    // border: 1px solid orangered;
+    margin-top: 10px;
+    margin-left: 35px;
+    line-height: 15px;
+    width: 65%;
+    // cursor: pointer;
+}
+.bookname{
+
+    font-size: 15px;
+}
+.author{
+    font-size: 11px;
+    opacity: 0.5;
+}
+.pricetag{
+    margin-top: 10px;
+}
+.price{
+    font-size: 18px;
+}
+.mrp{
+    margin-left: 14px;
+    font-size: 11px;
+    opacity: 0.6;
+    text-decoration-line: line-through;
+}
+.count {
+    // background   : #FFFFFF 0% 0% no-repeat padding-box;
+    border       : 1px solid #DBDBDB;
+    border-radius: 2px;
+    font-size    : 15px;
+    width: 40px;
+    height: 25px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    // text-align: center;
+    // align-items: center;
+    // padding      : 10px 35px;
+ }
+ .plusminus {
+    width     : 25px ;
+    height    : 25px ;
+    // background: #FAFAFA 0% 0% no-repeat padding-box !important;
+    // opacity   : 1 !important;
+    border-radius: 30px;
+    border: none;
+ }
+ .counter{
+     margin-right: 400px;
+ }
+ .personalDetails{
+    border:1px solid rgb(194, 191, 191);
+     margin-top: 20px;
+     width: 800px;
+ }
+ .cusdetails{
+     margin-left: 30px;
+     margin-top: 15px;
+     font-size: 20px;
+ }
+ .fulldetails{
+    //  border:2px solid pink;
+     width: 600px;
+     margin-left: 50px;
+ }
+ .nameNum{
+    //  border:2px solid greenyellow;
+     width: 100%;
+ }
+ .name{
+    // border:2px solid orchid;
+    width: 45%;
+ }
+ .namevalue{
+    border:1px solid rgb(194, 191, 191);
+ }
+ .numvalue{
+     margin-left: 10px;
+     opacity: 0.6;
+ }
+ .address{
+    // border:2px solid greenyellow;
+    width: 100%;
+ }
+ .textarea{
+     width:98%;
+     height: 80px;
+ }
+ .adddetails{
+    // margin-left: 30px;
+    margin-top: 15px;
+    font-size: 20px;
+ }
+ .addvalue{
+     width: 97%;
+     height: 40px;
+     font-size: 15px;
+ }
+ .continue{
+    //  border: 5px solid peru;
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+ .placebutton{
+    width: 150px;
+    height: 30px;
+    color: white;
+    background-color: rgb(64, 64, 180);
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+}
+.remove{
+    border:none;
+    margin-left: 20px;
+    background-color: white;
+}
+.Add{
+    //  border:2px solid greenyellow;
+     width: 100%;
+     margin-bottom: 20px;
+ }

@@ -9,6 +9,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 
 import { AuthGuardGuard } from './Authguard/auth-guard.guard';
+import { CartComponent } from './Components/cart/cart.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component';
+import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"signup/login", pathMatch:'full' },
@@ -25,8 +29,13 @@ const routes: Routes = [
 children: [
   {path:'', redirectTo:"home/bookList", pathMatch:'full' },
   {path:'bookList',component:GetAllBooksComponent},
-  {path:'book',component:BookDisplayComponent}
-]}
+  {path:'book',component:BookDisplayComponent},
+  {path:'cart',component:CartComponent},
+  {path:'wishlist',component:WishlistComponent},
+  {path:'bookDetails',component:PlaceOrderComponent},
+  
+]},
+{path:'orderplaced',component:OrderPlacedComponent}
 
 ];
 

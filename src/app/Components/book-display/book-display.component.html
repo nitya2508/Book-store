@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
 <div class="screen">
 
     <div fxLayout="row">
@@ -26,7 +30,7 @@
                         </button>
                     </div>
 
-                    <button class="button2">WISHLIST</button>
+                    <button class="button2" (click)="addToWishlist()">WISHLIST</button>
                 </div>
             </div>
         </div>
@@ -54,30 +58,46 @@
             <div class="feedbackDiv" fxLayout="column">
                 <span class="overallRating">Overall rating</span> 
                 <div>
-                    <div class="rating">
-                        <input type="radio"  value="5" [checked]="star===5" />
-                         <label  (click)='onClick(5)'>5 stars</label>
-                          
-                        <input type="radio"  value="4" [checked]="star===4" />
-                        <label  (click)='onClick(4)'>4 stars</label>
-                          
-                        <input type="radio"  value="3" [checked]="star===3" />
-                        <label  (click)='onClick(3)'>3 stars</label>
-                          
-                        <input type="radio"  value="2" [checked]="star===2" />
-                        <label  (click)='onClick(2)'>2 stars</label>
-                          
-                        <input type="radio"  value="1" [checked]="star===1" />
-                        <label (click)='onClick(1)'>1 star</label>
+                    <div class="star-widget" >
+                        <input type="radio" name="rate" id="rate-5" [(ngModel)]="value" value="5">
+                        <label for="rate-5" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-4" [(ngModel)]="value" value="4">
+                        <label for="rate-4" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-3" [(ngModel)]="value" value="3">
+                        <label for="rate-3" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-2" [(ngModel)]="value" value="2">
+                        <label for="rate-2" class="fas fa-star"></label>
+                        <input type="radio" name="rate" id="rate-1" [(ngModel)]="value" value="1">
+                        <label for="rate-1" class="fas fa-star"></label>
                     </div>
                 </div>
                 <div>
-                <textarea class="inputarea"></textarea>
+                <textarea [(ngModel)]="comment" class="inputarea"></textarea>
                 </div>
                 <div>
-                <button class="submit">Submit</button>
+                <button class="submit" (click)="addFeedback()">Submit</button>
                 </div>
             </div>
+            <div style="background-color:white;border: 1px solid rgb(219, 217, 217);width: 80%;margin-left: 30px;" fxLayout="column wrap" fxLayoutAlign="start start" fxLayoutGap="20px"
+            *ngFor="let item of bookStoreArray">
+
+            <div>
+                <div style="margin-top: 20px;" fxLayout="row">
+                    <!-- <mat-icon>account_circle</mat-icon> -->
+                    <p class="user">{{item.user_id.fullName}}</p>
+                </div>
+                <div fxLayout="row">
+                    <p class="getrating" > {{item.rating}}</p>
+                    <div class="fa fa-star checked stars" ></div>
+
+                </div>
+                <div>
+                    <p class="comment">{{item.comment}}</p>
+                </div>
+
+                <br>
+            </div>
+        </div>
         </div>
 
     </div>

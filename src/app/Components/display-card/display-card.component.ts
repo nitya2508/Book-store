@@ -2,6 +2,7 @@ import { Component, Input,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/service/dataService/data.service';
 import { BookService } from 'src/app/service/bookService/book.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-display-card',
@@ -11,13 +12,16 @@ import { BookService } from 'src/app/service/bookService/book.service';
 export class DisplayCardComponent implements OnInit {
 @Input() BookArray:any
 book:any;
-  constructor( private route:Router, private dataService: DataService, private bookService: BookService) { }
+inCart:boolean=false;
+
+  constructor( private route:Router, private dataService: DataService, private bookService: BookService, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
+ 
   bookDetails(books:any){
-    // console.log("book details",books);
+    console.log("book details",books);
     this.book=books;
 
     this.route.navigateByUrl('/home/book');
@@ -36,7 +40,25 @@ book:any;
     this.bookService.addtoCartService(books._id).subscribe((response:any) =>{
       console.log("add to cart item", response);
       
+      this.snackbar.open('Item added to cart Successfully !', '',{
+        duration: 200,
+      })
     })
     
   }
+
+  addToWishlist(books:any){
+
+    this.bookService.addtoWishListService(books._id).subscribe((response:any) =>{
+      console.log("add to cart item", response);
+      
+      this.snackbar.open('Item added to wishlist successfully !','',{
+        duration: 200,
+      })
+      this.route.navigateByUrl('/home/wishlist')
+    },error=>{
+      console.log("Error")
+    })
+  }
+  
 }

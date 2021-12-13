@@ -1,20 +1,40 @@
 <div  >
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="header">
+    <!-- <div fxLayout="row" fxLayoutAlign="space-between center" class="header">
        <div fxLayout="row">
         <h2>Books  </h2>
         <small class="items">( {{BookArray.length}} items )</small>
        </div>
 
        <div>
-        <mat-form-field appearance="fill" class="dropdown">
+        <button mat-button [matMenuTriggerFor]="menu">Sort by relevence</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="highestPrice()">Sort by highest price</button>
+          <button mat-menu-item (click)="lowestPrice()">Sort by lowest price</button>
+          <button mat-menu-item (click)="newestArrival()">Newest arrial</button>
+        </mat-menu>
+        
+        <mat-form-field >
+        <button mat-icon-button [matMenuTriggerFor]="reminderMenu" #menuTrigger class="dropdown"
+        class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon">
+            Sort by relevence
+        </button>
+        <mat-menu #reminderMenu="matMenu" class="remMenu">
+            <p>Reminder:</p>
+            <button mat-menu-item>Tomorrow</button>
+            <button mat-menu-item>Next week</button>
+            
+        </mat-menu>
+    </mat-form-field> -->
+        <!-- <mat-form-field appearance="fill" class="dropdown">
             <mat-label>Sort by relevence</mat-label>
-            <mat-select> 
+            <mat-select> -->
               <!-- <mat-option value="one">First option</mat-option>
               <mat-option value="two">Second option</mat-option> -->
-            </mat-select>
+            <!-- </mat-select>
           </mat-form-field>
        </div>
-    </div>
+    </div> -->
     <div  fxLayout="row" class="screen" >
         <div *ngFor="let book of BookArray">
        
@@ -40,7 +60,7 @@
 
                     <div fxLayout="column" fxLayoutAlign="space-around center" class="buttons">
                         <button class="profilebutton" (click)="addtocart(book)"><img src="../../../assets/shopping_cart_black_24dp.svg"></button>
-                        <button class="profilebutton"><img src="../../../assets/favorite_black_24dp.svg"></button>
+                        <button class="profilebutton" (click)="addToWishlist(book)"><img src="../../../assets/favorite_black_24dp.svg"></button>
                     </div>
 
                 </div>

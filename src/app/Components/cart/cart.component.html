@@ -1,0 +1,48 @@
+<div class="screen">
+    <div fxLayout="row">
+        <h3 class="home" routerLink="/home/bookList"> Home / </h3>
+        <h3> My cart ({{bookArray.length}})</h3>
+    </div>
+    
+        <div fxLayout="column" class="cartItem" >
+            <div *ngFor="let book of bookArray; let i = index"> 
+            <!-- <div>
+            <h3 class="mycart">My cart({{i+1}})</h3>
+            </div> -->
+    
+            <div fxLayout="row">
+                <div>
+                    <img class="image" src="../../../assets/Image 11.png"> 
+                </div>
+                <div class="bookdetails" >
+                    <p class="bookname">{{book.product_id.bookName}}</p>
+                    <span class="author">by {{book.product_id.author}}</span>
+                    
+                    <div fxLayout="row" class="pricetag">
+                    <span class="price">Rs. {{book.product_id.price}}</span>
+                    <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                    </div>
+    
+                    <div  fxLayout="row" fxLayoutAlign="center center" class="counter">
+                        <button (click)="countdecrease()" class="plusminus">
+                           <img src="../../../assets/remove_circle_outline_black_24dp.svg">
+                        </button>
+                        <p class="count">{{book.quantityToBuy}}</p>
+                        <button  (click)="countincrease()" class="plusminus">
+                            <img src="../../../assets/control_point_black_24dp.svg">
+                        </button>
+                        <button class="remove" (click)="deleteCartitem(book)">Remove</button>
+                    </div>
+    
+                </div>
+            </div>
+            <!-- <hr> -->
+    
+            
+        </div>
+        <div class="placeord" fxLayout="row" fxLayoutAlign="end start">
+            <button class="placebutton" (click)="placeorder()">PLACE ORDER</button>
+        </div>
+    </div>
+    
+</div>

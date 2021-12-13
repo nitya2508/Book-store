@@ -85,7 +85,7 @@
 hr{
     // height: 1px;
     color: rgb(187, 172, 172);
-    width: 70%;
+    width: 90%;
     opacity: 0.5;
 }
 .desc{
@@ -117,7 +117,7 @@ hr{
     // border: 2px solid pink;
     background-color: rgb(226, 223, 223);
     width: 80%;
-    height: 40%;
+    height: 200px;
     margin-left: 30px;
 }
 .overallRating{
@@ -127,50 +127,68 @@ hr{
 }
 
 
+// .rating:not(:checked) > input {
+//     position:absolute;
+//     top:-9999px;
+//     clip:rect(0,0,0,0);
+// }
 
-.rating {
-    float:left;
-    margin-left: 30px;
-    margin-top: 10px;
+// .rating:not(:checked) > label {
+//     float:right;
+//     width:1em;
+//     padding:0.1em;
+//     overflow:hidden;
+//     white-space:nowrap;
+//     cursor:pointer;
+//     font-size:200%;
+//     line-height:0.8;
+//     // color:rgb(190, 29, 29);
+//     color: white;
+//     transition: all 0.2s ease;
+// }
+
+// .rating:not(:checked) > label:before {
+//     content: '★ ';
+// }
+.feedbackDiv .star-widget input{
+    display: none;
+}
+.star-widget {
+    margin-right   : 450px;
+ }
+
+ .star-widget label{
+   font-size   : 20px;
+   color       : #444;
+   padding     : 10px;
+   float       : right;
+   transition  : all 0.2s ease;
+ }
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~label{
+    color    : #A03037;
 }
 
-.rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-    clip:rect(0,0,0,0);
+input:checked ~ label{
+    color    : #A03037;
 }
 
-.rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    padding:0.1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    line-height:0.8;
-    color:rgb(190, 29, 29);
-}
+// .rating > input:checked ~ label {
+//     color: #f70;
+// }
 
-.rating:not(:checked) > label:before {
-    content: '★ ';
-}
-
-.rating > input:checked ~ label {
-    color: #f70;
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-}
+// .rating:not(:checked) > label:hover,
+// .rating:not(:checked) > label:hover ~ label {
+//     color: gold;
+// }
 
 
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-}
+// .rating > input:checked ~ label:hover,
+// .rating > input:checked ~ label:hover ~ label,
+// .rating > label:hover ~ input:checked ~ label {
+//     color: #ea0;
+// }
 
 
 .inputarea{
@@ -203,8 +221,9 @@ hr{
  .plusminus {
     width     : 38px !important;
     height    : 38px !important;
-    background: #FAFAFA 0% 0% no-repeat padding-box !important;
+    // background: #FAFAFA 0% 0% no-repeat padding-box !important;
     opacity   : 1 !important;
+    border-radius: 40px;
  }
 .counter{
     // border:2px solid green;
@@ -215,3 +234,19 @@ hr{
     height: 40px;
    
 }
+.user  {
+    font-size: large;
+    margin-left: 10px;
+ }
+ 
+ .comment {
+    margin-left: 35px;
+ }
+ 
+ .getrating {
+    margin-left: 35px;
+ }
+ .stars{
+    //  border:2px solid yellow;
+     margin-top: 15px;
+ }

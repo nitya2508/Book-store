@@ -1,0 +1,36 @@
+<div class="screen">
+    <div fxLayout="row">
+        <h3 class="home" routerLink="/home/bookList"> Home / </h3>
+        <h3>My Wishlist</h3>
+    </div>
+
+    <div class="Header">
+        <p class="title">My Wishlist({{bookArray.length}})</p>
+    </div>
+
+    <div *ngFor="let book of bookArray; let i = index"> 
+        <div fxLayout="column" class="cartItem" >
+            
+            <div fxLayout="row">
+                <div>
+                    <img class="image" src="../../../assets/Image 11.png"> 
+                </div>
+                <div class="bookdetails" >
+                    <p class="bookname">{{book.product_id.bookName}}</p>
+                    <span class="author">by {{book.product_id.author}}</span>
+                    
+                    <div fxLayout="row" class="pricetag">
+                    <span class="price">Rs. {{book.product_id.price}}</span>
+                    <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                    </div>
+                </div>
+                <div > 
+                    <button class="delete" (click)="deleteitem(book)"><img src="../../../assets/delete_forever_black_24dp.svg"></button>
+                </div>
+            </div>
+    
+           
+        </div>
+    </div>
+
+</div> 

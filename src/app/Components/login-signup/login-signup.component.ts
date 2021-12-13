@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-signup.component.scss']
 })
 export class LoginSignupComponent implements OnInit {
-isSignup: boolean =true;
+isSignup: boolean =false;
 
   constructor(private router:Router) { }
 

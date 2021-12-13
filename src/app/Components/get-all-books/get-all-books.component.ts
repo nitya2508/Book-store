@@ -23,4 +23,17 @@ BookList:any;
       this.BookList=response.result;
     })
   }
+
+  highestPrice(){
+    this.BookList.sort((a:any,b:any) => b.price -(a.price));
+  }
+
+  lowestPrice(){
+    this.BookList.sort((a:any,b:any) => a.price -(b.price));
+  }
+
+  newestArrival(){
+    this.BookList.reverse();
+  }
+
 }

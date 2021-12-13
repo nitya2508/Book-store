@@ -1,0 +1,154 @@
+<div class="screen">
+    <div fxLayout="row">
+        <h3 class="home" routerLink="/home/bookList"> Home / </h3>
+        <h3> My cart ({{bookArray.length}})</h3>
+    </div>
+   
+        <div fxLayout="column" class="cartItem" >
+            <div *ngFor="let book of bookArray">
+                <!-- <div>
+                <h3 class="mycart">My cart({{i+1}})</h3>
+                </div> -->
+        
+                <div fxLayout="row">
+                    <div>
+                        <img class="image" src="../../../assets/Image 11.png"> 
+                    </div>
+                    <div class="bookdetails" >
+                        <p class="bookname">{{book.product_id.bookName}}</p>
+                        <span class="author">by {{book.product_id.author}}</span>
+                        
+                        <div fxLayout="row" class="pricetag">
+                        <span class="price">Rs. {{book.product_id.price}}</span>
+                        <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                        </div>
+        
+                        <div  fxLayout="row" fxLayoutAlign="center center" class="counter">
+                            <button (click)="countdecrease()" class="plusminus">
+                            <img src="../../../assets/remove_circle_outline_black_24dp.svg">
+                            </button>
+                            <p class="count">{{book.quantityToBuy}}</p>
+                            <button  (click)="countincrease()" class="plusminus">
+                                <img src="../../../assets/control_point_black_24dp.svg">
+                            </button>
+                            <button class="remove" (click)="deleteCartitem(book)">Remove</button>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="continue" *ngIf="isPlaceorder" fxLayout="row" fxLayoutAlign="end start">
+                <button class="placebutton" (click)="placeorder()">PLACE ORDER</button>
+            </div>
+           
+        </div>
+
+        <div fxLayout="column" class="personalDetails">
+            <div>
+            <p class="cusdetails">Customer Details</p>
+            </div>
+            <div *ngIf="isCustDetails">
+            <div  fxLayout="column" class="fulldetails">
+                <div fxLayout="row" fxLayoutAlign="space-between center"  class="nameNum">
+                    <div fxLayout="column" class="name">
+                        <p>Full name</p>
+                        <div class="namevalue">
+                        <p class="numvalue">{{fullName}}</p>
+                        </div>
+
+                    </div>
+                    <div fxLayout="column" class="name">
+                        <p>Mobile number</p>
+                        <div class="namevalue">
+                        <p class="numvalue">{{phone}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="address">
+                    <p class="adddetails">Home</p>
+                    <!-- <form [formGroup]="placeorderForm" > -->
+                    <div fxLayout="column">
+                    <small>Address</small>
+                    <textarea class="textarea" [(ngModel)]="adderss"></textarea>
+                    
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center"  class="Add">
+                        <div fxLayout="column" class="name">
+                            <p>city/town</p>
+                            <div >
+                            <input class="addvalue" [(ngModel)]="city" >
+                            </div>
+    
+                        </div>
+                        <div fxLayout="column" class="name">
+                            <p>State</p>
+                            <div >
+                            <input class="addvalue" [(ngModel)]="state" >
+                            </div>
+                        </div>
+    
+                    </div>
+                    <!-- </form> -->
+                </div>
+
+            </div>
+
+            <div *ngIf="isContinue" class="continue" fxLayout="row" fxLayoutAlign="end center" >
+                <button class="placebutton" (click)="onSubmit()">CONTINUE</button>
+            </div>
+        </div>
+        </div>
+
+        <div fxLayout="column" class="cartItem" >
+            <div>
+                <!-- <h3 class="mycart" (click)="order()">Order summary</h3> -->
+                <p class="cusdetails" (click)="order()">Order summary</p>
+            </div>
+            <div *ngIf="isOrdersummary">
+                <div *ngFor="let book of bookArray">
+               
+        
+                    <div fxLayout="row">
+                        <div>
+                            <img class="image" src="../../../assets/Image 11.png"> 
+                        </div>
+                        <div class="bookdetails" >
+                            <p class="bookname">{{book.product_id.bookName}}</p>
+                            <span class="author">by {{book.product_id.author}}</span>
+                            
+                            <div fxLayout="row" class="pricetag">
+                            <span class="price">Rs. {{book.product_id.price}}</span>
+                            <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                            </div>
+            
+                            <div  fxLayout="row" fxLayoutAlign="center center" class="counter">
+                                <button (click)="countdecrease()" class="plusminus">
+                                <img src="../../../assets/remove_circle_outline_black_24dp.svg">
+                                </button>
+                                <p class="count">{{book.quantityToBuy}}</p>
+                                <button  (click)="countincrease()" class="plusminus">
+                                    <img src="../../../assets/control_point_black_24dp.svg">
+                                </button>
+                                <!-- <button class="remove" (click)="deleteCartitem(book)">Remove</button> -->
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="continue" fxLayout="row" fxLayoutAlign="end center" >
+                    <button class="placebutton" (click)="orderplaced()">CHECK OUT</button>
+                </div>
+
+            </div>
+          
+            
+           
+        </div>
+    
+    
+</div>
+

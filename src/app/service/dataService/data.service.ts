@@ -16,4 +16,12 @@ export class DataService {
     // console.log("inside data service ===", message);
     
   }
+
+  private getBook = new BehaviorSubject({ });
+  BookData = this.getBook.asObservable()
+  changebookData(message:any){
+    this.getBook.next(message)
+    // console.log("inside data service ===", message);
+    
+  }
 }

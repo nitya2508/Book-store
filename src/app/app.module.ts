@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { LoginSignupComponent } from './Components/login-signup/login-signup.component';
 import { SignupComponent } from './Components/signup/signup.component';
@@ -24,6 +25,11 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllBooksComponent } from './Components/get-all-books/get-all-books.component';
 import { DisplayCardComponent } from './Components/display-card/display-card.component';
 import { BookDisplayComponent } from './Components/book-display/book-display.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { PlaceOrderComponent } from './Components/place-order/place-order.component';
+import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,11 @@ import { BookDisplayComponent } from './Components/book-display/book-display.com
     DashboardComponent,
     GetAllBooksComponent,
     DisplayCardComponent,
-    BookDisplayComponent
+    BookDisplayComponent,
+    CartComponent,
+    WishlistComponent,
+    PlaceOrderComponent,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,9 @@ import { BookDisplayComponent } from './Components/book-display/book-display.com
     MatToolbarModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
