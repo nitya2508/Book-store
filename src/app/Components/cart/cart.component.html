@@ -1,7 +1,7 @@
 <div class="screen">
     <div fxLayout="row">
         <h3 class="home" routerLink="/home/bookList"> Home / </h3>
-        <h3> My cart ({{bookArray.length}})</h3>
+        <h3> My cart ({{bookArray?.length}})</h3>
     </div>
     
         <div fxLayout="column" class="cartItem" >
@@ -15,12 +15,12 @@
                     <img class="image" src="../../../assets/Image 11.png"> 
                 </div>
                 <div class="bookdetails" >
-                    <p class="bookname">{{book.product_id.bookName}}</p>
-                    <span class="author">by {{book.product_id.author}}</span>
+                    <p class="bookname">{{book?.product_id.bookName}}</p>
+                    <span class="author">by {{book?.product_id.author}}</span>
                     
                     <div fxLayout="row" class="pricetag">
-                    <span class="price">Rs. {{book.product_id.price}}</span>
-                    <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                    <span class="price">Rs. {{book?.product_id.price}}</span>
+                    <span class="mrp">Rs. {{book?.product_id.price + book.product_id.discountPrice}}</span>
                     </div>
     
                     <div  fxLayout="row" fxLayoutAlign="center center" class="counter">

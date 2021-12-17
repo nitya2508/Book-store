@@ -33,9 +33,9 @@ children: [
   {path:'cart',component:CartComponent},
   {path:'wishlist',component:WishlistComponent},
   {path:'bookDetails',component:PlaceOrderComponent},
-  
+  {path:'orderplaced',component:OrderPlacedComponent}
 ]},
-{path:'orderplaced',component:OrderPlacedComponent}
+
 
 ];
 

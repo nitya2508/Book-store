@@ -19,7 +19,14 @@
         </div>
 
         <div fxLayout="column" fxLayoutAlign="center center" class="cart">
-        <button class="profilebutton" routerLink="/home/bookDetails"><img src="../../../assets/shopping_cart_black_24dp.svg"></button>
+        <button mat-raised-button matBadge={{count}} [matBadgeHidden]="hidden"  matBadgeColor="warn" matBadgePosition="below after" class="profilebutton" routerLink="/home/bookDetails"><img src="../../../assets/shopping_cart_black_24dp.svg"></button>
+
+            <!-- <button mat-raised-button 
+                color="primary"
+                matBadge="14">
+              Action
+        </button> -->
+
         <span class="profile">Cart</span>
         </div>
 

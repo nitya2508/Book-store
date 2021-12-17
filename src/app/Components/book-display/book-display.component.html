@@ -17,7 +17,7 @@
             </div>
             <div class="largeimg" fxHide.lt-md>
                 <img class="largeimage" src="../../../assets/Image 11.png">
-                <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="buttons">
                     <button class="button1" *ngIf="AddtoBag" (click)="addToCart()">ADD TO BAG</button>
                    
                     <div *ngIf="countHide" fxLayout="row" fxLayoutAlign="center center" class="counter">
@@ -37,21 +37,21 @@
 
         <div class="description">
             <div class="bookdetails" fxLayout="column">
-                <p class="bookname">{{book.bookName}}</p>
-                <span class="author">by {{book.author}}</span>
+                <p class="bookname">{{book?.bookName}}</p>
+                <span class="author">by {{book?.author}}</span>
                 <div fxLayout="row">
                     <p class="rate">4.5 &starf;</p>
-                    <span class="number">({{book.quantity}})</span>
+                    <span class="number">({{book?.quantity}})</span>
                 </div>
                 <div fxLayout="row">
-                <p class="price">Rs. {{book.price}}</p>
-                <span class="mrp">Rs. {{book.price + book.discountPrice}}</span>
+                <p class="price">Rs. {{book?.price * orderCount}}</p>
+                <span class="mrp">Rs. {{book?.price + book?.discountPrice * orderCount}} </span>
                 </div>
             </div>
             <hr>
             <div class="bookdetails">
                 <p> * Book Detail</p>
-                <p class="desc">{{book.description}}</p>
+                <p class="desc">{{book?.description}}</p>
             </div>
             <hr>
             <p class="feedback">Customer Feedback</p>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div>
-                <textarea [(ngModel)]="comment" class="inputarea"></textarea>
+                <textarea [(ngModel)]="comment" class="inputarea" placeholder="Write a comment"></textarea>
                 </div>
                 <div>
                 <button class="submit" (click)="addFeedback()">Submit</button>

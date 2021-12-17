@@ -5,7 +5,7 @@
     </div>
 
     <div class="Header">
-        <p class="title">My Wishlist({{bookArray.length}})</p>
+        <p class="title">My Wishlist({{arraylength}})</p>
     </div>
 
     <div *ngFor="let book of bookArray; let i = index"> 
@@ -16,12 +16,12 @@
                     <img class="image" src="../../../assets/Image 11.png"> 
                 </div>
                 <div class="bookdetails" >
-                    <p class="bookname">{{book.product_id.bookName}}</p>
-                    <span class="author">by {{book.product_id.author}}</span>
+                    <p class="bookname">{{book?.product_id.bookName}}</p>
+                    <span class="author">by {{book?.product_id.author}}</span>
                     
                     <div fxLayout="row" class="pricetag">
-                    <span class="price">Rs. {{book.product_id.price}}</span>
-                    <span class="mrp">Rs. {{book.product_id.price + book.product_id.discountPrice}}</span>
+                    <span class="price">Rs. {{book?.product_id.price}}</span>
+                    <span class="mrp">Rs. {{book?.product_id.price + book?.product_id.discountPrice}}</span>
                     </div>
                 </div>
                 <div > 

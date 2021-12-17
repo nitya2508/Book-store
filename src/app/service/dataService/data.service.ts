@@ -17,11 +17,20 @@ export class DataService {
     
   }
 
-  private getBook = new BehaviorSubject({ });
+  private getBook = new BehaviorSubject({data:[]});
   BookData = this.getBook.asObservable()
   changebookData(message:any){
     this.getBook.next(message)
     // console.log("inside data service ===", message);
     
   }
+
+  private badge = new BehaviorSubject('default message');
+  BadgeData = this.badge.asObservable()
+  changeBadgeData(message:any){
+    this.badge.next(message)
+    // console.log("inside data service ===", message);
+    
+  }
 }
+

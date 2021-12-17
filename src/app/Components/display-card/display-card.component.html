@@ -36,7 +36,10 @@
        </div>
     </div> -->
     <div  fxLayout="row" class="screen" >
-        <div *ngFor="let book of BookArray">
+        <div *ngFor="let book of BookArray | paginate: { 
+        itemsPerPage: 10,
+        currentPage: page,
+        totalItems: totalLength }">
        
             <div class="displaycard" fxLayout="column" >
                 <div class="imagediv" fxLayout="row" fxLayoutAlign="center center" (click)="bookDetails(book)">
@@ -46,15 +49,15 @@
                 <div fxLayout="row" fxLayoutAlign="space-between center">
 
                     <div class="bookdetails" (click)="bookDetails(book)">
-                        <p class="bookname">{{book.bookName}}</p>
-                        <span class="author">by {{book.author}}</span>
+                        <p class="bookname">{{book?.bookName}}</p>
+                        <span class="author">by {{book?.author}}</span>
                         <div fxLayout="row">
                             <p class="rating">4.5 &starf;</p>
-                            <span class="number">({{book.quantity}})</span>
+                            <span class="number">({{book?.quantity}})</span>
                         </div>
                         <div fxLayout="row">
-                        <span class="price">Rs. {{book.price}}</span>
-                        <span class="mrp">Rs. {{book.price + book.discountPrice}}</span>
+                        <span class="price">Rs. {{book?.price}}</span>
+                        <span class="mrp">Rs. {{book?.price + book?.discountPrice}}</span>
                         </div>
                     </div>
 
@@ -66,5 +69,8 @@
                 </div>
             </div>
         </div>
+       
     </div>
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
+    <pagination-controls  (pageChange)="page = $event"></pagination-controls>
 </div>

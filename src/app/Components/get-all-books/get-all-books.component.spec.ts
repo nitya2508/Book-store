@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { GetAllBooksComponent } from './get-all-books.component';
 
@@ -8,7 +10,8 @@ describe('GetAllBooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetAllBooksComponent ]
+      declarations: [ GetAllBooksComponent ],
+      imports: [HttpClientModule, MatMenuModule]
     })
     .compileComponents();
   });
@@ -22,4 +25,10 @@ describe('GetAllBooksComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('getAllBooks', () => {
+    component.getAllBooks()
+    expect(component.getAllBooks).toBeTruthy();
+  });
+
 });

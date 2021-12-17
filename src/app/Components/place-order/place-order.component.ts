@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/service/dataService/data.service';
 import { BookService } from 'src/app/service/bookService/book.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/service/userService/user.service';
 import { Router } from '@angular/router';
 
@@ -30,12 +29,13 @@ export class PlaceOrderComponent implements OnInit {
   isCustDetails=false;
   orders:any;
   orderlist:any=[];
+  arrayLength:any;
 
-  constructor(private dataService: DataService, private bookService: BookService, private formBuilder: FormBuilder,
-    private userService: UserService, private route: Router) { }
+  constructor(private dataService: DataService, private bookService: BookService, private userService: UserService, private route: Router) { }
 
   ngOnInit(): void {
     this.getCartItems();
+    this.dataService.changeBadgeData("true")
     // this.subscription = this.dataService.BookData.subscribe(message => {
     //   this.message = message;
     //   // console.log("display card search data======", message.data[0]);
@@ -62,11 +62,12 @@ export class PlaceOrderComponent implements OnInit {
       console.log("cart items ====",response.result);
       console.log("cart items ====",response.result[0]);
       this.bookArray=response.result;
-      this.fullName=this.bookArray[0].user_id.fullName;
-      this.phone=this.bookArray[0].user_id.phone;
-      this.adderss=this.bookArray[0].user_id.address[0].fullAddress;
-      this.city=this.bookArray[0].user_id.address[0].city;
-      this.state=this.bookArray[0].user_id.address[0].state;
+      this.arrayLength=this.bookArray?.length;
+      this.fullName=this.bookArray[0]?.user_id.fullName;
+      this.phone=this.bookArray[0]?.user_id.phone;
+      this.adderss=this.bookArray[0]?.user_id.address[0].fullAddress;
+      this.city=this.bookArray[0]?.user_id.address[0].city;
+      this.state=this.bookArray[0]?.user_id.address[0].state;
 
       
     })
@@ -93,14 +94,14 @@ export class PlaceOrderComponent implements OnInit {
     }
   }
 
-  deleteCartitem(book:any){
-    console.log("delete cart book id",book.product_id._id);
-    this.bookService.removeCartItenService(book._id).subscribe((response:any)=>{
+  deleteCartitem(book?:any){
+    // console.log("delete cart book id",book?.product_id?._id);
+    this.bookService.removeCartItenService(book?._id).subscribe((response:any)=>{
       console.log("delete msg",response);
 
-      for (let i = 0; i < this.bookArray.length; i++) {
+      for (let i = 0; i < this.arrayLength; i++) {
         if (this.bookArray[i] == book) {
-        this.bookArray.splice(i, 1);
+        this.bookArray?.splice(i, 1);
         }
         }
       
@@ -132,13 +133,13 @@ export class PlaceOrderComponent implements OnInit {
   orderplaced(){
     // console.log("orderplace====",book.product_id._id,book.product_id.bookName ,book.quantityToBuy, book.product_id.price);
 
-    this.bookArray.forEach((element: any) => {
-      this.orderlist.push(
+    this.bookArray?.forEach((element: any) => {
+      this.orderlist?.push(
         {
-          "product_id": element.product_id._id,
-          "product_name": element.product_id.bookName,
-          "product_quantity": element.quantityToBuy,
-          "product_price": element.product_id.price - element.product_id.discountPrice
+          "product_id": element?.product_id?._id,
+          "product_name": element?.product_id?.bookName,
+          "product_quantity": element?.quantityToBuy,
+          "product_price": element?.product_id?.price - element?.product_id?.discountPrice
         }
       );
     });
@@ -151,7 +152,7 @@ export class PlaceOrderComponent implements OnInit {
   
     this.bookService.addOrder(payload).subscribe((response:any)=>{
       console.log("order response", response);
-      this.route.navigateByUrl("/orderplaced")
+      this.route.navigateByUrl("/home/orderplaced")
       
     })
    }

@@ -30,6 +30,8 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {MatBadgeModule} from '@angular/material/badge'; 
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatSelectModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    NgxPaginationModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

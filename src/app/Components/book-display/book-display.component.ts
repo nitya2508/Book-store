@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-book-display',
   templateUrl: './book-display.component.html',
@@ -14,7 +15,7 @@ export class BookDisplayComponent implements OnInit {
   subscription:any;
   message:any;
   book:any;
-  orderCount = 0;
+  orderCount = 1;
   AddtoBag =true;
   countHide =false;
   value:any;
@@ -22,6 +23,8 @@ export class BookDisplayComponent implements OnInit {
   star:any;
   comment:any;
   bookStoreArray:any;
+  id:any;
+  bookOrder=1;
 
   constructor(private dataService: DataService, private bookService: BookService, private snackbar: MatSnackBar,
     private route: Router) { }
@@ -31,8 +34,12 @@ export class BookDisplayComponent implements OnInit {
     this.subscription = this.dataService.searchNote.subscribe(message => {
       this.message = message;
       // console.log("display card search data======", message.data[0]);
-      this.book=message.data[0]
-        console.log("book",this.book);
+      this.book=message?.data[0]
+      this.id =this.book?._id
+        console.log("book======",this.book);
+       console.log("book    id======",this.book?._id);
+       console.log("book  this  id======",this.id);
+       
 
       
   })
@@ -42,23 +49,31 @@ addFeedback() {
   let data = {
     rating: this.value,
     comment: this.comment,
-    product_id: this.book._id,
+    product_id: this.id ,
   }
 
   this.bookService.addFeedbackService(data).subscribe((response: any) => {
     console.log("the response", response);
-
+    this.getfeedBack()
+    this.value="";
+    this.comment="";
   })
 }
 
 addToCart(){
-  console.log("book id",this.book._id);
+  console.log("book id",this.id );
   this.AddtoBag =false;
   this.countHide =true;
 
-  this.bookService.addtoCartService(this.book._id).subscribe((response:any) =>{
+  this.bookService.addtoCartService(this.id ).subscribe((response:any) =>{
     console.log("add to cart item", response);
+    console.log(this.orderCount);
+    let Ddata={
+      data:this.orderCount,
+    }
     
+    this.dataService.changebookData(Ddata);
+    console.log("count",Ddata.data)
     this.snackbar.open('Item added to cart successfully !','',{
       duration: 200,
     })
@@ -70,7 +85,7 @@ addToCart(){
 
 addToWishlist(){
 
-  this.bookService.addtoWishListService(this.book._id).subscribe((response:any) =>{
+  this.bookService.addtoWishListService(this.id ).subscribe((response:any) =>{
     console.log("add to cart item", response);
     
     this.snackbar.open('Item added to wishlist successfully !','',{
@@ -102,8 +117,17 @@ updateCount() {
   let payload = {
     "quantityToBuy": this.orderCount,
   }
-  this.bookService.updateitemcount(this.book._id, payload).subscribe((response) => { 
+  this.bookService.updateitemcount(this.id , payload).subscribe((response) => { 
     console.log(response);
+
+    console.log(this.orderCount);
+    let Ddata={
+      data:this.orderCount,
+    }
+    
+    this.dataService.changebookData(Ddata);
+    console.log("count",Ddata.data)
+
   })
    
 }
@@ -116,7 +140,7 @@ onClick(rating:number){
 }
 getfeedBack() {
   let data = {
-    product_id: this.book._id,
+    product_id: this.id ,
   }
   this.bookService.getfeedBack(data).subscribe(
     (response: any) => {
