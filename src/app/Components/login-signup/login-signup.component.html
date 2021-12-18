@@ -8,6 +8,15 @@
             <h4>ONLINE BOOK SHOPPING</h4>
         </div>
         <div class="regForm">
+            <!-- <mat-radio-group aria-label="Select an option" [(ngModel)]="inputValue">
+                <mat-radio-button [value]="user">User</mat-radio-button>
+                <mat-radio-button [value]="admin">Admin</mat-radio-button>
+              </mat-radio-group>
+              <p>{{inputValue}}</p> -->
+
+              <input type="radio" value="user"[(ngModel)]="inputValue" (change)="onItemChange($event)">User
+              <input type="radio" value="admin"[(ngModel)]="inputValue" (change)="onItemChange($event)">Admin
+              
             <div class="buttonStyle" fxLayout="row" fxLayoutAlign="space-evenly center">
             <button [style.color]="!isSignup ? 'black' : 'gray'" (click)="login()">LOGIN</button>
             <button [style.color]="isSignup ? 'black' : 'gray'"  (click)="signup()">SIGNUP</button>

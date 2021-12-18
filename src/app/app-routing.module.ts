@@ -13,6 +13,7 @@ import { CartComponent } from './Components/cart/cart.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { PlaceOrderComponent } from './Components/place-order/place-order.component';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
+import { AdminBookListComponent } from './Components/admin-book-list/admin-book-list.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"signup/login", pathMatch:'full' },
@@ -33,7 +34,8 @@ children: [
   {path:'cart',component:CartComponent},
   {path:'wishlist',component:WishlistComponent},
   {path:'bookDetails',component:PlaceOrderComponent},
-  {path:'orderplaced',component:OrderPlacedComponent}
+  {path:'orderplaced',component:OrderPlacedComponent},
+  {path:'adminbookList',component:AdminBookListComponent}
 ]},
 
 

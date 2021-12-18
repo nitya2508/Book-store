@@ -1,24 +1,24 @@
 <div class="screen">
-    <mat-toolbar class="toolbar">
+    <mat-toolbar class="toolbar" >
         <mat-toolbar-row>
-         <div class="logo" fxHide.lt-md>
+         <div [ngClass]="'logo'" [ngClass.lt-md]="'medLogo'" >
             <img src="../../../assets/education.png">
-            <span class="title">Bookstore</span>
+            <span fxHide.xs class="title">Bookstore</span>
          </div>
 
-         <mat-form-field class="formfield" fxHide.lt-sm>
+         <mat-form-field [ngClass]="'formfield'" [ngClass.lt-md]="'medformfield'">
             <mat-icon matPrefix>
             <button class="searchbutton"><img  src="../../../assets/search_black_24dp.svg"></button>
             </mat-icon>
-            <input class="input" matInput   >
+            <input fxHide.lt-md  class="input" matInput   >
         </mat-form-field>
 
-        <div fxLayout="column" class="prof" >
+        <div fxLayout="column" [ngClass]="'prof'" [ngClass.lt-md]="'medprof'" >
         <button class="profilebutton" (click)="logout()"><img src="../../../assets/person_black_24dp.svg"></button>
         <span class="profile">Profile</span>
         </div>
 
-        <div fxLayout="column" fxLayoutAlign="center center" class="cart">
+        <div fxLayout="column" fxLayoutAlign="center center" [ngClass]="'cart'" [ngClass.lt-md]="'medcart'">
         <button mat-raised-button matBadge={{count}} [matBadgeHidden]="hidden"  matBadgeColor="warn" matBadgePosition="below after" class="profilebutton" routerLink="/home/bookDetails"><img src="../../../assets/shopping_cart_black_24dp.svg"></button>
 
             <!-- <button mat-raised-button 

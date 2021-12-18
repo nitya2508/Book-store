@@ -1,0 +1,32 @@
+<div>
+    <div class="bookDetalis"  fxLayout="row" fxLayoutAlign="center center" >
+        <h1>Books Details</h1>
+    </div>
+<table>
+    <tr>
+      <th>Book</th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Quantity</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let book of BookList">
+      <td><img src="../../../assets/Image 11.png"></td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.price}}</td>
+      <td>{{book.discountPrice}}</td>
+      <td>{{book.quantity}}</td>
+      <td><button>Update</button></td>
+      <td><button>Delete</button></td>
+      
+    </tr>
+   
+  </table>
+  <div class="buttonDiv"  fxLayout="row" fxLayoutAlign="center center" >
+      <button class="buttonStyle">Add a book</button>
+  </div>
+</div>

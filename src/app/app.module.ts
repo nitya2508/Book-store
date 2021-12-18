@@ -32,6 +32,8 @@ import { OrderPlacedComponent } from './Components/order-placed/order-placed.com
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatBadgeModule} from '@angular/material/badge'; 
+import {MatRadioModule} from '@angular/material/radio';
+import { AdminBookListComponent } from './Components/admin-book-list/admin-book-list.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     CartComponent,
     WishlistComponent,
     PlaceOrderComponent,
-    OrderPlacedComponent
+    OrderPlacedComponent,
+    AdminBookListComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatMenuModule,
     MatPaginatorModule,
     NgxPaginationModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

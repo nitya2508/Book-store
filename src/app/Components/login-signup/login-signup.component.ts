@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/dataService/data.service';
 
 @Component({
   selector: 'app-login-signup',
@@ -8,11 +9,22 @@ import { Router } from '@angular/router';
 })
 export class LoginSignupComponent implements OnInit {
 isSignup: boolean =false;
-
-  constructor(private router:Router) { }
+inputValue: any;
+user:any;
+admin:any;
+  constructor(private router:Router, private dataService: DataService) { }
 
   ngOnInit(): void {
+    
   }
+  onItemChange($event:any){
+    console.log($event);
+    console.log("input",this.inputValue);
+    this.dataService.changeBadgeData(this.inputValue)
+    
+  }
+  
+  
 
   signup(){
     this.isSignup=true;

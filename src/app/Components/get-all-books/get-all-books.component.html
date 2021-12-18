@@ -1,5 +1,5 @@
-<div class="screen">
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="header">
+<div [ngClass]="'screen'" [ngClass.lt-md]="'medscreen'">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" class="header">
         <div fxLayout="row">
          <h2>Books  </h2>
          <small class="items">( {{BookList?.length}} items )</small>

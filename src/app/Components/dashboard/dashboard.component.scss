@@ -10,9 +10,14 @@
     // margin-bottom: 10px;
 }
 .logo{
-    // border: 2px solid yellow;
+    //  border: 2px solid yellow;
     margin-top: 15px;
     margin-left: 150px;
+}
+.medLogo{
+    // border: 2px solid yellow;
+    margin-top: 15px;
+    margin-left: 50px;
 }
 .screen{
     // border: 2px solid red;
@@ -26,7 +31,16 @@
     margin-left: 150px;
     background-color: white;
     border-radius: 3px;
-//    border: 5px solid orchid;
+    //   border: 5px solid orchid;
+}
+.medformfield{
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 3px;
+    //   border: 5px solid orchid;
 }
 .searchbutton{
     background-color: white;
@@ -56,7 +70,15 @@
     margin-top: 10px;
     margin-left: 250px;
 }
+.medprof{
+    margin-top: 10px;
+    margin-left: 50px;
+}
 .cart{
     margin-top: 10px;
     margin-left: 150px;
+}
+.medcart{
+    margin-top: 10px;
+    margin-left: 70px;
 }
